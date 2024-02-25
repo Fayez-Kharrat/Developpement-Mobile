@@ -1,8 +1,8 @@
 package com.example.implicitintents;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
 import androidx.core.app.ShareCompat;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -14,7 +14,9 @@ public class MainActivity extends AppCompatActivity {
     private EditText mWebsiteEditText;
     private EditText mLocationEditText;
     private EditText mShareTextEditText;
-    private Object ActivityCompat;
+
+    public MainActivity() {
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         mShareTextEditText = findViewById(R.id.share_edittext);
     }
 
+    @SuppressLint("QueryPermissionsNeeded")
     public void openWebsite(View view) {
         String url = mWebsiteEditText.getText().toString();
         Uri webpage = Uri.parse(url);
@@ -35,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @SuppressLint("QueryPermissionsNeeded")
     public void openLocation(View view) {
         String loc = mLocationEditText.getText().toString();
         Uri addressUri = Uri.parse("geo:0,0?q=" + loc);
@@ -43,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         }
     }
+    /** @noinspection deprecation*/
     public void shareText(View view) {
         String txt = mShareTextEditText.getText().toString();
         String mimeType = "text/plain";
