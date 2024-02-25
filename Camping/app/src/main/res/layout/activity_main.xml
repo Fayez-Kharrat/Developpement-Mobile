@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/camp8"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/places_to_visit_tunisia"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="288dp" />
+
+    <Button
+        android:id="@+id/button"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/next"
+        android:onClick="nextScreen"
+        tools:layout_editor_absoluteX="162dp"
+        tools:layout_editor_absoluteY="643dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
